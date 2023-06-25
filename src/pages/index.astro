@@ -48,7 +48,7 @@ const WHY_CHOSE_USE = [
 					src={desktopScreen1}
 					width={1000}
 					aspectRatio="16:9"
-					alt={"test"}
+					alt={"Desktop screen 1"}
 				/>
 			</div>
 		</section>
@@ -59,8 +59,8 @@ const WHY_CHOSE_USE = [
 					{
 						WHY_CHOSE_USE.map((item) => (
 							<div class="text-center">
-								<h3 class="font-bold mb-3">{item.title}</h3>
-								<p>{item.description}</p>
+								<h3 class="font-bold mb-3 text-xl">{item.title}</h3>
+								<p class="font-lg">{item.description}</p>
 							</div>
 						))
 					}
@@ -74,9 +74,24 @@ const WHY_CHOSE_USE = [
 			</div>
 		</section>
 
-		<div class="container mx-auto">
-			<HowWeWork />
-		</div>
+		<section>
+			<div class="container mx-auto">
+				<HowWeWork />
+			</div>
+		</section>
+
+		<section class="bg-white">
+			<div class="container text-center mx-auto py-40">
+				<div class="max-w-xl mx-auto">
+					<p class="text-3xl mb-10">
+						Please register your interest for early access to HiringBuddy beta
+						community.
+					</p>
+
+					<JoinWaitList />
+				</div>
+			</div>
+		</section>
 	</main>
 </Layout>
 

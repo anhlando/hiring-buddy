@@ -1,46 +1,60 @@
 ---
+import desktopScreen1 from "../assets/desktop-screen-1.png";
+
 const WHAT_WE_DO = [
   {
     title: "We get to know you",
     content: "5 mins simple questionnaire to learn about you",
     subContent: "HiringBuddy proprietary framework",
+    image: desktopScreen1,
   },
   {
     title: "We show your true value",
     content:
       "Immediate access to your strengths, differentiators and ideal working environments",
     subContent: "",
+    image: desktopScreen1,
   },
   {
     title: "HiringBuddy does the matching instantly",
     content:
       "No resumes, no applications - companies will start the conversation with you",
     subContent: "",
+    image: desktopScreen1,
   },
   {
     title: "Land your ideal job",
     content: "No waiting for weeks or months - get hired in days",
     subContent: "",
+    image: desktopScreen1,
   },
 ];
 ---
 
 <div>
-  <div class="container mx-auto min-h-screen pt-40">
-    <h3 class="text-center">The scientific approach</h3>
-    <h2 class="text-center text-6xl font-bold">How HiringBuddy works</h2>
+  <div class="container mx-auto min-h-screen pt-40 text-primaryDark">
+    <h3 class="text-center mb-6">The scientific approach</h3>
+    <h2 class="text-center text-6xl font-bold mb-4">How HiringBuddy works</h2>
 
     <div>
       {
-        WHAT_WE_DO.map((item) => (
+        WHAT_WE_DO.map((item, index) => (
           <div class="grid grid-cols-2 py-6">
-            <div>
-              <h3 class="text-4xl font-bold mb-4">{item.title}</h3>
-              <p>{item.content}</p>
-              <p>{item.subContent}</p>
+            <div class="flex flex-col justify-center">
+              <p class="text-center text-3xl font-bold text-white mb-4">
+                <span class="inline-flex justify-center items-center bg-primary w-16 h-16 rounded-full">{index + 1}</span>
+              </p>
+
+              <div class="max-w-md mx-auto">
+                <h3 class="text-4xl font-bold mb-4">{item.title}</h3>
+                <p class="text-3xl mb-2">{item.content}</p>
+                <p class="text-xl">{item.subContent}</p>
+              </div>
             </div>
 
-            <div>image</div>
+            <div>
+              <img src={item.image.src} alt="" />
+            </div>
           </div>
         ))
       }
