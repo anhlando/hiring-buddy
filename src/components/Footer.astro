@@ -1,6 +1,33 @@
-<!-- footer -->
+---
+const LINKS = [
+  {
+    label: "Our Story",
+    url: "/our-story",
+  },
+  {
+    label: "Team",
+    url: "/team",
+  },
+  {
+    label: "FAQs",
+    url: "/faqs",
+  },
+  {
+    label: "Contact Us",
+    url: "/contact-us",
+  },
+  {
+    label: "Client",
+    url: "/client",
+  },
+];
+---
+
 <footer>
   <div class="container mx-auto">
+    <div class="flex justify-center items-center">
+      {LINKS.map((item) => <a class="py-6 px-10 text-gray-400" href={item.url}>{item.label}</a>)}
+    </div>
     <div class="text-center">
       <p>© 2023 Hiring buddy</p>
     </div>

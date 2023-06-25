@@ -6,6 +6,11 @@ module.exports = {
       maxWidth: {
         xxs: "14rem",
       },
+      colors: {
+        primary: {
+          DEFAULT: "#403CFF",
+        }
+      }
     },
   },
   plugins: [],

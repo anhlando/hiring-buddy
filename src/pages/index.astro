@@ -1,21 +1,77 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ScrollText from "../components/ScrollText";
 import HowWeWork from "../components/HowWeWork.astro";
+import desktopScreen1 from "../assets/desktop-screen-1.png";
+import JoinWaitList from "../components/JoinWaitList";
 
 const SCROLL_TEXT = `We get you, recruitment is broken. You're applying to tonnes of roles, just to be ghosted and rejected.
 We believe recruitment should be effortless and enjoyable. We've got your back. Let's fix this together!`;
+
+const WHY_CHOSE_USE = [
+	{
+		title: "No cover letters, no resumes",
+		description: "Simply connect with your LinkedIn profile",
+	},
+	{
+		title: "Buddy AI does the matching",
+		description: "We find suitable positions for you based off your true value",
+	},
+	{
+		title: "Land the ideal job",
+		description: "Companies initiate connect with you",
+	},
+];
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="container mx-auto">
-			<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-			<p>Banner</p>
-			<p>3 iteams</p>
+		<section class="min-h-screen pt-20 bg-white">
+			<div class="container mx-auto">
+				<h2 class="text-center text-7xl mb-10 font-bold">
+					The hiring experience <br /> you'll <span>love</span>
+				</h2>
+
+				<p class="text-center mb-10">
+					Hiring buddy understands your strengths and <br /> drivers to connect you
+					with a workspace to thrive in!
+				</p>
+			</div>
+
+			<div class="text-center">
+				<JoinWaitList />
+			</div>
+
+			<div class="flex justify-center">
+				<Image
+					src={desktopScreen1}
+					width={1000}
+					aspectRatio="16:9"
+					alt={"test"}
+				/>
+			</div>
 		</section>
-		<section class="container mx-auto">
-			<ScrollText text={SCROLL_TEXT} />
+
+		<section class="bg-white">
+			<div class="container mx-auto">
+				<div class="grid grid-cols-3 py-36">
+					{
+						WHY_CHOSE_USE.map((item) => (
+							<div class="text-center">
+								<h3 class="font-bold mb-3">{item.title}</h3>
+								<p>{item.description}</p>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="bg-white">
+			<div class="container mx-auto">
+				<ScrollText text={SCROLL_TEXT} />
+			</div>
 		</section>
 
 		<div class="container mx-auto">
