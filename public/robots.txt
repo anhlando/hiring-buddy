@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hiring-buddy-9cd15.web.app/sitemap-index.xml
