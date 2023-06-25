@@ -1,19 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ScrollText from "../components/ScrollText";
+import HowWeWork from "../components/HowWeWork.astro";
+
+const SCROLL_TEXT = `We get you, recruitment is broken. You're applying to tonnes of roles, just to be ghosted and rejected.
+We believe recruitment should be effortless and enjoyable. We've got your back. Let's fix this together!`;
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section>
+		<section class="container mx-auto">
 			<h1>Welcome to <span class="text-gradient">Astro</span></h1>
 			<p>Banner</p>
 			<p>3 iteams</p>
 		</section>
-		<section>
-			<ScrollText text="ahihi" />
+		<section class="container mx-auto">
+			<ScrollText text={SCROLL_TEXT} />
 		</section>
 
+		<div class="container mx-auto">
+			<HowWeWork />
+		</div>
 	</main>
 </Layout>
 

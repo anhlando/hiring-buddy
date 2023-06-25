@@ -4,7 +4,7 @@ interface Props {
 }
 
 const ScrollText: React.FC<Props> = ({ className, text }) => {
-  return <div className={className}>{text}</div>;
+  return <div className={`${className} h-screen`}>{text}</div>;
 };
 
 export default ScrollText;
