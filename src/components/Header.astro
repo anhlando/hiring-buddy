@@ -18,11 +18,11 @@ const links = [
 ];
 ---
 
-<header class="bg-white shadow-md relative z-10">
+<header class="bg-white shadow-md relative z-10 py-3">
   <div class="container mx-auto">
     <div class="flex items-center justify-between">
       <div class="flex">
-        <div class="mr-20 p-3 max-w-xxs">
+        <div class="mr-20 p-3" style="width: 153px">
           <a href="/">
             <img
               src={logoFull.src}
@@ -37,7 +37,7 @@ const links = [
           {
             links.map((link) => (
               <a
-                class="inline-flex justify-center items-center mr-6 text-gray-500"
+                class="inline-flex justify-center items-center mr-6 text-boulder text-sm"
                 href={link.href}
               >
                 {link.label}
