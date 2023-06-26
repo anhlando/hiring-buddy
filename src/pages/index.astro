@@ -4,11 +4,13 @@ import Layout from "../layouts/Layout.astro";
 import ScrollText from "../components/ScrollText";
 import HowWeWork from "../components/HowWeWork.astro";
 import desktopScreen1 from "../assets/desktop-group-1.png";
+import iconHeart from "../assets/icon-heart.png";
 import JoinWaitList from "../components/JoinWaitList";
 
 import ap1 from "../assets/ap-1.svg";
 import ap2 from "../assets/ap-2.svg";
 import ap3 from "../assets/ap-3.svg";
+import Highlight from "../components/Highlight.astro";
 
 const SCROLL_TEXT = `We get you, recruitment is broken. You're applying to tonnes of roles, just to be ghosted and rejected.
 We believe recruitment should be effortless and enjoyable. We've got your back. Let's fix this together!`;
@@ -37,7 +39,7 @@ const WHY_CHOSE_USE = [
 		<section class="pt-20 bg-white">
 			<div class="container mx-auto">
 				<h1 class="text-center mb-6">
-					The hiring experience <br /> you'll <span>love</span>
+					The hiring experience <br /> you'll <Highlight>love</Highlight>
 				</h1>
 
 				<p class="text-center mb-10">
@@ -66,7 +68,10 @@ const WHY_CHOSE_USE = [
 					{
 						WHY_CHOSE_USE.map((item) => (
 							<div class="flex justify-center">
-								<div class="flex flex-col justify-center items-center text-center" style="max-width: 256px">
+								<div
+									class="flex flex-col justify-center items-center text-center"
+									style="max-width: 256px"
+								>
 									<img
 										src={item.image.src}
 										width={item.image.width}
@@ -89,33 +94,37 @@ const WHY_CHOSE_USE = [
 			</div>
 		</section>
 
-		<section class="bg-liner">
-			<div class="container mx-auto">
-				<HowWeWork />
-			</div>
+		<section>
+			<HowWeWork />
 		</section>
 
 		<section class="bg-white">
 			<div class="container text-center mx-auto py-40">
 				<div class="max-w-xl mx-auto">
-					<p class="text-3xl mb-10">
+					<div class="flex justify-center mb-8">
+						<Image
+							src={iconHeart}
+							width={58}
+							aspectRatio="1:1"
+							alt={"icon heart"}
+						/>
+					</div>
+
+					<div class="text-center mb-10 text-black text-[26px] leading-10">
 						Please register your interest for early access to HiringBuddy beta
 						community.
-					</p>
+					</div>
 
-					<JoinWaitList />
+					<JoinWaitList className="mb-3" />
+					<div class="flex justify-center">
+						<div
+							class="w-[281px] text-center text-gray-600 text-[14px] font-normal"
+						>
+							Don’t worry, we will not share anything with your network
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 	</main>
 </Layout>
-
-<style>
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-</style>

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import JoinWaitList from "../JoinWaitList";
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
 
 const ScrollText: React.FC<Props> = ({ className, text }) => {
   return (
-    <div className={`${className} h-screen`}>
+    <div className={clsx(className, "h-screen")}>
       <p
         className="text-7xl font-poppins font-semibold leading-snug text-justify"
         style={{ color: "#D9D9D9" }}

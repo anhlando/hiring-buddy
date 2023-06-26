@@ -35,8 +35,8 @@ const WHAT_WE_DO = [
 ];
 ---
 
-<div>
-  <div class="container mx-auto min-h-screen pt-40 text-primaryDark">
+<div class="bgLiner">
+  <div class="container mx-auto min-h-screen pt-40 pb-40 text-primaryDark">
     <h3 class="text-center mb-6">The scientific approach</h3>
     <h2 class="text-center text-6xl font-bold mb-24">How HiringBuddy works</h2>
 
@@ -53,8 +53,8 @@ const WHAT_WE_DO = [
 
               <div class="max-w-md mx-auto">
                 <h3 class="text-4xl font-bold mb-4">{item.title}</h3>
-                <p class="text-3xl mb-2">{item.content}</p>
-                <p class="text-xl">{item.subContent}</p>
+                <p class="text-2xl mb-2 text-navyBlue">{item.content}</p>
+                <p class="text-xl opacity-50">{item.subContent}</p>
               </div>
             </div>
 
@@ -74,16 +74,23 @@ const WHAT_WE_DO = [
 </div>
 
 <style>
+  .bgLiner {
+    background: linear-gradient(177deg, rgba(218.45, 209.31, 255, 0.20) 0%, rgba(159, 190, 250, 0.20) 90%, rgba(0, 86.87, 255, 0.20) 100%);
+  }
   .borderOpacity {
     @apply relative;
-    &::after {
-      @apply rounded-full;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+  }
+
+  .borderOpacity::before {
+    @apply rounded-full;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% + 1rem);
+    height: calc(100% + 1rem);
+    background-color: rgba(167, 180, 209, 0.3);
+    z-index: -1;
   }
 </style>

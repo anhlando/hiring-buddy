@@ -19,12 +19,21 @@ module.exports = {
         boulder: {
           DEFAULT: "#7A7A7A",
         },
+        navyBlue: {
+          DEFAULT: "#000578",
+        },
+        lightningYellow: {
+          DEFAULT: "#FFBE1C",
+        }
       },
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
+    container: {
+      padding: '2rem',
+    }
   },
   plugins: [
     plugin(function ({ addBase, theme }) {
