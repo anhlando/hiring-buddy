@@ -68,19 +68,20 @@ const WHY_CHOSE_USE = [
 				<div class="grid md:grid-cols-3">
 					{
 						WHY_CHOSE_USE.map((item) => (
-							<div class="flex justify-center mb-12 md:mb-0">
-								<div
-									class="flex flex-col justify-center items-center text-center"
-									style="max-width: 256px"
-								>
-									<img
-										src={item.image.src}
-										width={item.image.width}
-										height={item.image.height}
-										class="mb-5"
-									/>
-									<h3 class="font-bold mb-3 text-base">{item.title}</h3>
-									<p class="font-base">{item.description}</p>
+							<div class="flex md:justify-center mb-12 md:mb-0">
+								<div class="flex md:flex-col md:justify-center md:items-center md:text-center md:max-w-[256px]">
+									<div class="md:mb-5 flex-none w-12 mr-6 md:mr-0 pt-1 md:pt-0">
+										<img
+											src={item.image.src}
+											width={item.image.width}
+											height={item.image.height}
+										/>
+									</div>
+
+									<div class="flex-1">
+										<h3 class="font-bold mb-3 text-base">{item.title}</h3>
+										<p class="font-base">{item.description}</p>
+									</div>
 								</div>
 							</div>
 						))
