@@ -10,7 +10,7 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
   return (
     <div className={clsx(className, "h-screen")}>
       <p
-        className="text-7xl font-poppins font-semibold leading-snug text-justify"
+        className="md:text-7xl text-3xl font-poppins font-semibold leading-snug text-justify"
         style={{ color: "#D9D9D9" }}
       >
         {text}

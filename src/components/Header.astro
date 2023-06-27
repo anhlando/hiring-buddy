@@ -33,7 +33,7 @@ const links = [
           </a>
         </div>
 
-        <nav class="inline-flex">
+        <nav class="hidden md:inline-flex">
           {
             links.map((link) => (
               <a
@@ -47,7 +47,7 @@ const links = [
         </nav>
       </div>
 
-      <JoinWaitList />
+      <JoinWaitList className="hidden md:inline-block"/>
     </div>
   </div>
 </header>

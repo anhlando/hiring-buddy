@@ -11,5 +11,7 @@ export default defineConfig({
     assets: true,
   },
   site: "https://hiring-buddy-9cd15.web.app",
-  integrations: [tailwind(), react(), partytown(), sitemap()],
+  integrations: [tailwind({
+    applyBaseStyles: false,
+  }), react(), partytown(), sitemap()],
 });

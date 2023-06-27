@@ -1,0 +1,20 @@
+/* The integration's default injected base.css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply font-poppins font-bold leading-tight text-5xl;
+
+  @screen lg {
+    font-size: 4.75rem;
+  }
+}
+
+h2 {
+  @apply font-poppins font-bold text-6xl;
+}
+
+h4 {
+  @apply font-sans text-lg;
+}

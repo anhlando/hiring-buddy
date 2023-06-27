@@ -33,7 +33,8 @@ module.exports = {
       },
     },
     container: {
-      padding: '2rem',
+      padding: '1rem',
+      center: true,
     }
   },
   plugins: [
