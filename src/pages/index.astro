@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ScrollText from "../components/ScrollText";
 import HowWeWork from "../components/HowWeWork.astro";
-import desktopScreen1 from "../assets/desktop-group-1.png";
+// import desktopScreen1 from "../assets/desktop-group-1.png";
 import iconHeart from "../assets/icon-heart.png";
 import JoinWaitList from "../components/JoinWaitList";
 
@@ -48,16 +48,25 @@ const WHY_CHOSE_USE = [
 				</p>
 			</div>
 
-			<div class="text-center">
+			<div class="text-center mb-10">
 				<JoinWaitList />
 			</div>
 
 			<div class="flex justify-center -mb-48">
-				<Image
+				<!-- <Image
 					src={desktopScreen1}
 					width={1300}
 					aspectRatio="16:9"
 					alt={"Desktop screen 1"}
+				/> -->
+
+				<video
+					src="/videos/desktop-screen-1.webm"
+					autoplay
+					muted
+					loop
+					width={'50%'}
+					class="rounded-t-2xl"
 				/>
 			</div>
 		</section>

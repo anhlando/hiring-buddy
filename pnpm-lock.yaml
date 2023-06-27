@@ -20,12 +20,18 @@ dependencies:
   '@fontsource-variable/inter':
     specifier: ^5.0.3
     version: 5.0.3
+  '@fontsource-variable/montserrat':
+    specifier: ^5.0.4
+    version: 5.0.4
   '@fontsource/poppins':
     specifier: ^5.0.3
     version: 5.0.3
   '@heroicons/react':
     specifier: ^2.0.18
     version: 2.0.18(react@18.2.0)
+  '@storyblok/astro':
+    specifier: ^2.4.1
+    version: 2.4.1
   '@types/react':
     specifier: ^18.2.14
     version: 18.2.14
@@ -47,6 +53,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.2
+  vite:
+    specifier: ^4.3.9
+    version: 4.3.9
 
 devDependencies:
   prettier:
@@ -651,6 +660,10 @@ packages:
     resolution: {integrity: sha512-AIE1Lm2/cNkCD4oAJ3JVY54tGhlUS7NnAiqGmE045v+7XHqmUhSYjhQNUgnBGcenth4bN75l+KIeTDbcGc7Emw==}
     dev: false
 
+  /@fontsource-variable/montserrat@5.0.4:
+    resolution: {integrity: sha512-fxr8pwfWV21MacFRmo/SE/shMNbMBc1vqinGFc7bb49xUlCl/+o4+S1pQoj/NMtJU+DF+mGhQz5ozN6u3SGiEQ==}
+    dev: false
+
   /@fontsource/poppins@5.0.3:
     resolution: {integrity: sha512-5lL2vmvmh4zbknTh1nVH9pTWyhYqAlYMHIAnkNhqo5qwMZGlr+coM1dtMwiQHRBgmHAl3ZvJ35Bj0s8cpmXZbg==}
     dev: false
@@ -732,6 +745,19 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.5.3
+    dev: false
+
+  /@storyblok/astro@2.4.1:
+    resolution: {integrity: sha512-HRbMO+2h25y/EnvzyQWABe4MEpYviugA90qHehq4okCe9nsZjyv6L0D5ZJODmUA/APNTnFzf79/EkD3NlXMSmw==}
+    dependencies:
+      '@storyblok/js': 2.2.1
+      camelcase: 7.0.1
+    dev: false
+
+  /@storyblok/js@2.2.1:
+    resolution: {integrity: sha512-FMXTUqA5lQYhguInpnEe4OZJM4Ym1/CLdI2JrPyx+SrCvUiHOTqym4bqwlETIGSHSTq4c7d8jv0G0lrE2ZED0A==}
+    dependencies:
+      storyblok-js-client: 5.11.0
     dev: false
 
   /@types/babel__core@7.20.1:
@@ -1130,6 +1156,11 @@ packages:
   /camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
+    dev: false
+
+  /camelcase@7.0.1:
+    resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
+    engines: {node: '>=14.16'}
     dev: false
 
   /caniuse-lite@1.0.30001507:
@@ -3091,6 +3122,10 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dependencies:
       bl: 5.1.0
+    dev: false
+
+  /storyblok-js-client@5.11.0:
+    resolution: {integrity: sha512-1YZ+kQD7a+jlZyPBP8n7bKXoSa0Ct3t4BL/XESISp9ABVb1i1nWB5jbLcYHvJMrYm4xYel/iHAVdQ6t8I1pQ4g==}
     dev: false
 
   /streamsearch@1.1.0:

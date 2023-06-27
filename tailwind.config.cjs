@@ -29,6 +29,7 @@ module.exports = {
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
+        montserrat: ['Montserrat Variable', ...defaultTheme.fontFamily.sans]
       },
     },
     container: {
@@ -40,7 +41,7 @@ module.exports = {
       addBase({
         h1: { 
           fontFamily: theme("fontFamily.poppins"),
-          fontSize: theme("fontSize.7xl"),
+          fontSize: "4.75rem",
           fontWeight: theme("fontWeight.bold"),
           lineHeight: theme("lineHeight.tight"),
         },

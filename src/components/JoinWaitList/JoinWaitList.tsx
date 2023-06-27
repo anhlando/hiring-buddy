@@ -13,7 +13,7 @@ const JoinWaitList: React.FC<Props> = ({ className }) => {
         className
       )}
     >
-      <span className="mr-5">Join WaitList</span>
+      <span className="mr-5 font-montserrat">Join waitlist!</span>
       <ChevronRightIcon className="text-white w-6 h-6" />
     </button>
   );
