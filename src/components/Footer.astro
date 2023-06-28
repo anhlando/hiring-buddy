@@ -23,10 +23,10 @@ const LINKS = [
 ];
 ---
 
-<footer class="bg-white hidden md:block">
+<footer class="bg-white">
   <div class="container mx-auto">
-    <div class="flex justify-center items-center">
-      {LINKS.map((item) => <a class="py-6 px-10 text-gray-400" href={item.url}>{item.label}</a>)}
+    <div class="flex md:justify-center justify-evenly items-center">
+      {LINKS.map((item) => <a class="md:py-6 md:px-10 py-3 text-gray-400" href={item.url}>{item.label}</a>)}
     </div>
     <div class="text-center">
       <p>© 2023 Hiring buddy</p>

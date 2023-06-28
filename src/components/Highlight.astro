@@ -1,10 +1,10 @@
 <span class="highlight">
-  <span class="z-10 relative"><slot /></span>
+  <slot />
 </span>
 
-<style>
+<style is:global>
   .highlight {
-    @apply relative;
+    @apply relative z-[1];
   }
 
   .highlight::before {
@@ -15,5 +15,7 @@
     width: calc(100% + 1rem);
     height: 70%;
     @apply bg-lightningYellow;
+    z-index: -1;
+    transform: translateZ(-1px);
   }
 </style>

@@ -7,27 +7,27 @@ import screen4 from "../assets/screen-4.png";
 
 const WHAT_WE_DO = [
   {
-    title: "We get to know you",
+    title: "We get to <span class='highlight'>know you</span>",
     content: "5 mins simple questionnaire to learn about you",
     subContent: "HiringBuddy proprietary framework",
     image: screen1,
   },
   {
-    title: "We show your true value",
+    title: "We show your <span class='highlight'>true value</span>",
     content:
       "Immediate access to your strengths, differentiators and ideal working environments",
     subContent: "",
     image: screen2,
   },
   {
-    title: "HiringBuddy does the matching instantly",
+    title: "<span class='text-primary'>HiringBuddy</span> does the matching <span class='highlight'>instantly</span>",
     content:
       "No resumes, no applications - companies will start the conversation with you",
     subContent: "",
     image: screen3,
   },
   {
-    title: "Land your ideal job",
+    title: "Land your <span class='highlight'>ideal job</span>",
     content: "No waiting for weeks or months - get hired in days",
     subContent: "",
     image: screen4,
@@ -36,9 +36,9 @@ const WHAT_WE_DO = [
 ---
 
 <div class="bgLiner">
-  <div class="container mx-auto min-h-screen pt-40 pb-40 text-primaryDark">
-    <h3 class="text-center mb-6">The scientific approach</h3>
-    <h2 class="text-center md:text-6xl text-4xl font-bold mb-24">
+  <div class="container mx-auto min-h-screen md:pt-40 md:pb-40 pt-20 pb-20 text-primaryDark">
+    <h3 class="text-center md:mb-6 mb-4">The scientific approach</h3>
+    <h2 class="text-center md:text-6xl text-4xl font-bold md:mb-24 mb-8 ">
       How HiringBuddy works
     </h2>
 
@@ -47,16 +47,14 @@ const WHAT_WE_DO = [
         WHAT_WE_DO.map((item, index) => (
           <div class="grid md:grid-cols-2 md:py-6 py-12">
             <div class="flex flex-col justify-center mb-[50px] md:mb-0">
-              <p class="text-center text-4xl font-bold text-white mb-4">
-                <span class="borderOpacity inline-flex justify-center items-center bg-primary w-16 h-16 rounded-full">
+              <p class="text-center md:text-4xl text-2xl font-bold text-white mb-4">
+                <span class="borderOpacity inline-flex justify-center items-center bg-primary w-8 h-8 md:w-16 md:h-16 rounded-full">
                   {index + 1}
                 </span>
               </p>
 
               <div class="max-w-md mx-auto text-center md:text-left">
-                <h3 class="md:text-4xl text-3xl font-bold mb-4">
-                  {item.title}
-                </h3>
+                <h3 class="md:text-4xl text-3xl font-bold mb-4" set:html={item.title} />
                 <p class="text-2xl mb-2 text-navyBlue">{item.content}</p>
                 <p class="text-xl opacity-50">{item.subContent}</p>
               </div>

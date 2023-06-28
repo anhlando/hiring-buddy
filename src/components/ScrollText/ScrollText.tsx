@@ -15,7 +15,7 @@ const getThresholds = () => {
   }
 
   return thresholds;
-}
+};
 
 const ScrollText: React.FC<Props> = ({ className, text }) => {
   const [visiblePct, setVisiblePct] = useState(0);
@@ -27,7 +27,7 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setVisiblePct(Math.floor(entry.intersectionRatio * 100))
+          setVisiblePct(Math.floor(entry.intersectionRatio * 100));
         });
       },
       {
@@ -53,20 +53,30 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
           style={{ color: "#D9D9D9" }}
         >
           {words.map((word, index) => (
-            <span key={index} className={clsx("transition-colors", (index / words.length) * 100 < visiblePct ? "text-black" : "")}>
+            <span
+              key={index}
+              className={clsx(
+                "transition-colors",
+                (index / words.length) * 100 < visiblePct ? "text-black" : ""
+              )}
+            >
               {word + " "}
             </span>
           ))}
         </p>
       </div>
 
-      <div className="h-[80vh] w-full absolute bottom-[20%] left-0" ref={containerRef}>
-      </div>
+      <div
+        className="h-[80vh] w-full absolute bottom-[20%] left-0"
+        ref={containerRef}
+      ></div>
 
       <div className="text-center md:mt-40 mt-20 absolute bottom-0 w-full pb-4">
         <JoinWaitList className="mb-5" />
 
-        <p>Don't worry, we will not share anything with your network</p>
+        <p className="w-[281px] mx-auto text-center text-[#5F6368] text-sm font-normal">
+          Don't worry, we will not share anything with your network
+        </p>
       </div>
     </div>
   );
