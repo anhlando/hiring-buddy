@@ -14,4 +14,5 @@ export default defineConfig({
   integrations: [tailwind({
     applyBaseStyles: false,
   }), react(), partytown(), sitemap()],
+  compressHTML: true
 });
