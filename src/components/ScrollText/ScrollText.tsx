@@ -18,16 +18,16 @@ const getThresholds = () => {
 }
 
 const ScrollText: React.FC<Props> = ({ className, text }) => {
-  const [visiblePct, setVisiblePct] = useState("0%");
+  const [visiblePct, setVisiblePct] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const observer = useRef<IntersectionObserver | null>(null);
+  const words = (text || "").split(" ");
 
   useEffect(() => {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          let visiblePct = `${Math.floor(entry.intersectionRatio * 100)}%`;
-          setVisiblePct(visiblePct)
+          setVisiblePct(Math.floor(entry.intersectionRatio * 100))
         });
       },
       {
@@ -46,21 +46,21 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
 
   return (
     <div className={clsx(className, "h-[200vh] relative")}>
-      <div className="sticky top-0 right-0">{visiblePct}</div>
+      <div className="sticky top-0 right-0 hidden">{visiblePct}</div>
       <div className="sticky top-4 h-[100vh] flex items-center">
         <p
           className="md:text-7xl text-3xl font-poppins font-semibold md:leading-[1.375] leading-[1.375] text-justify"
           style={{ color: "#D9D9D9" }}
         >
-          {text.split(" ").map((word, index) => (
-            <span key={index}>
+          {words.map((word, index) => (
+            <span key={index} className={clsx("transition-colors", (index / words.length) * 100 < visiblePct ? "text-black" : "")}>
               {word + " "}
             </span>
           ))}
         </p>
       </div>
 
-      <div className="h-[80vh] w-full absolute bottom-0 left-0" ref={containerRef}>
+      <div className="h-[80vh] w-full absolute bottom-[20%] left-0" ref={containerRef}>
       </div>
 
       <div className="text-center md:mt-40 mt-20 absolute bottom-0 w-full pb-4">
