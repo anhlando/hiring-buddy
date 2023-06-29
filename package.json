@@ -3,11 +3,13 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "sst bind astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sst:deploy": "sst deploy",
+    "sst:dev": "sst dev"
   },
   "dependencies": {
     "@astrojs/partytown": "^1.2.3",
@@ -17,7 +19,10 @@
     "@fontsource-variable/inter": "^5.0.3",
     "@fontsource-variable/montserrat": "^5.0.4",
     "@fontsource/poppins": "^5.0.3",
+    "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.1.1",
+    "@hubspot/api-client": "^9.0.0",
     "@storyblok/astro": "^2.4.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
@@ -25,11 +30,17 @@
     "clsx": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
     "tailwindcss": "^3.3.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
+    "astro-sst": "^2.17.6",
+    "aws-cdk-lib": "2.84.0",
+    "constructs": "10.1.156",
     "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.10.0"
+    "prettier-plugin-astro": "^0.10.0",
+    "sst": "^2.17.6"
   }
 }
