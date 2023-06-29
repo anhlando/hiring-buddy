@@ -10,6 +10,7 @@ import ap1 from "../assets/ap-1.svg";
 import ap2 from "../assets/ap-2.svg";
 import ap3 from "../assets/ap-3.svg";
 import Highlight from "../components/Highlight.astro";
+import VideoHero from "../components/VideoHero.astro";
 
 const SCROLL_TEXT = `We get you, recruitment is broken. You're applying to tonnes of roles, just to be ghosted and rejected.
 We believe recruitment should be effortless and enjoyable. We've got your back. Let's fix this together!`;
@@ -50,17 +51,7 @@ const WHY_CHOSE_USE = [
 			<div class="text-center mb-10">
 				<JoinWaitList />
 			</div>
-			<div class="flex justify-center overflow-hidden">
-				<div class="md:w-1/2 md:-mb-48 relative -right-6 md:min-h-[600px]">
-					<video
-						src="/videos/desktop-screen-1.mp4"
-						autoplay
-						playsinline
-						muted
-						width="100%"
-						class="rounded-[12px]"></video>
-				</div>
-			</div>
+			<VideoHero client:load />
 		</section>
 
 		<section class="bg-white relative z-10 pt-20 pb-32">

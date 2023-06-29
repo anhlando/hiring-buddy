@@ -1,0 +1,36 @@
+---
+import heroImage from "../assets/hero-image.png";
+---
+
+<div class="flex justify-center overflow-hidden">
+  <div class="md:w-1/2 md:-mb-48 relative -right-6 md:min-h-[600px]">
+    <div
+      style=`background-image: url(${heroImage.src}); transform: translate(-50%, -50%)`
+      class="w-[120%] h-[120%] z-10 absolute top-1/2 left-1/2 bg-no-repeat bg-contain hidden"
+      id="video-hero-bg"
+    >
+    </div>
+    <video
+      id="video-hero"
+      src="/videos/desktop-screen-1.mp4"
+      autoplay
+      playsinline
+      muted
+      width="100%"
+      class="rounded-[12px] overflow-hidden z-10 relative"></video>
+  </div>
+</div>
+
+<script>
+  const videoHero = document.getElementById("video-hero");
+
+  if (videoHero) {
+    // check video on load
+    videoHero.addEventListener("loadeddata", () => {
+      // get video hero bg
+      const videoHeroBg = document.getElementById("video-hero-bg");
+      // remove class hidden
+      videoHeroBg?.classList.remove("hidden");
+    });
+  }
+</script>
