@@ -27,6 +27,12 @@ const HeaderMenu: React.FC<Props> = ({ className }) => {
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
+
+    if(isOpen) {
+      document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   return (
