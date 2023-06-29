@@ -23,7 +23,7 @@ const links = [
 
 const HeaderMenu: React.FC<Props> = ({ className }) => {
   // isOpen state
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {
     setIsOpen((prev) => !prev);
