@@ -27,7 +27,9 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setVisiblePct(Math.floor(entry.intersectionRatio * 100));
+          if (containerRef.current?.getBoundingClientRect().top && containerRef.current?.getBoundingClientRect().top > 0) {
+            setVisiblePct(Math.floor(entry.intersectionRatio * 100));
+          }
         });
       },
       {
