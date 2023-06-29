@@ -19,7 +19,7 @@ const links = [
 ];
 ---
 
-<header class="bg-white shadow-md relative z-10 py-3">
+<header class="bg-white shadow-md relative z-20 py-3">
   <div class="container mx-auto">
     <div class="flex items-center justify-between">
       <div class="flex w-full justify-between md:justify-normal md:w-auto">
@@ -34,7 +34,7 @@ const links = [
           </a>
         </div>
 
-        <HeaderMenu />
+        <HeaderMenu client:idle />
       </div>
 
       <JoinWaitList className="hidden md:block"/>
