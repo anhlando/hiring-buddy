@@ -61,8 +61,7 @@ const HeaderMenu: React.FC<Props> = ({ className }) => {
 
       {isOpen && (
         <div
-          className="fixed bottom-0 left-0 w-full bg-white z-60 pt-14"
-          style={{ height: 'calc(100vh - 4rem)' }}
+          className="absolute top-16 left-0 w-full bg-white z-60 pt-14 h-screen"
         >
           {links.map((link, index) => (
             <div className='container' key={`${link.href}${link.label}`}>
