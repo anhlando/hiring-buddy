@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 interface Props {
   className?: string;
   text: string;
+  highlight?: number[];
 }
 
 const getThresholds = () => {
@@ -17,7 +18,7 @@ const getThresholds = () => {
   return thresholds;
 };
 
-const ScrollText: React.FC<Props> = ({ className, text }) => {
+const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
   const [visiblePct, setVisiblePct] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const observer = useRef<IntersectionObserver | null>(null);
@@ -59,7 +60,7 @@ const ScrollText: React.FC<Props> = ({ className, text }) => {
               key={index}
               className={clsx(
                 "transition-colors",
-                (index / words.length) * 100 < visiblePct ? "text-black" : ""
+                (index / words.length) * 100 < visiblePct ? (highlight.includes(index) ? "text-primary" : "text-black") : ""
               )}
             >
               {word + " "}
