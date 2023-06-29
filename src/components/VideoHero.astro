@@ -25,11 +25,8 @@ import heroImage from "../assets/hero-image.png";
   const videoHero = document.getElementById("video-hero");
 
   if (videoHero) {
-    // check video on load
     videoHero.addEventListener("loadeddata", () => {
-      // get video hero bg
       const videoHeroBg = document.getElementById("video-hero-bg");
-      // remove class hidden
       videoHeroBg?.classList.remove("hidden");
     });
   }
