@@ -20,7 +20,8 @@ const WHAT_WE_DO = [
     image: screen2,
   },
   {
-    title: "<span class='text-primary'>HiringBuddy</span> does the matching <span class='highlight'>instantly</span>",
+    title:
+      "<span class='text-primary'>HiringBuddy</span> does the matching <span class='highlight'>instantly</span>",
     content:
       "No resumes, no applications - companies will start the conversation with you",
     subContent: "",
@@ -35,42 +36,49 @@ const WHAT_WE_DO = [
 ];
 ---
 
-<div class="bgLiner">
-  <div class="container mx-auto min-h-screen md:pt-40 md:pb-40 pt-20 pb-20 text-primaryDark">
-    <h3 class="text-center md:mb-6 mb-4">The scientific approach</h3>
-    <h2 class="text-center md:text-6xl text-4xl font-bold md:mb-24 mb-8 ">
-      How HiringBuddy works
-    </h2>
+<div class="py-4">
+  <div class="bgLiner md:rounded-tl-[12rem] md:rounded-br-[12rem] rounded-tl-[4rem] rounded-br-[4rem]">
+    <div
+      class="container mx-auto min-h-screen md:pt-40 md:pb-40 pt-20 pb-20 text-primaryDark"
+    >
+      <h3 class="text-center md:mb-6 mb-4">The scientific approach</h3>
+      <h2 class="text-center md:text-6xl text-4xl font-bold md:mb-24 mb-8">
+        How HiringBuddy works
+      </h2>
 
-    <div>
-      {
-        WHAT_WE_DO.map((item, index) => (
-          <div class="grid md:grid-cols-2 md:py-6 py-12">
-            <div class="flex flex-col justify-center mb-[50px] md:mb-0">
-              <p class="text-center md:text-4xl text-2xl font-bold text-white mb-4">
-                <span class="borderOpacity inline-flex justify-center items-center bg-primary w-8 h-8 md:w-16 md:h-16 rounded-full">
-                  {index + 1}
-                </span>
-              </p>
+      <div>
+        {
+          WHAT_WE_DO.map((item, index) => (
+            <div class="grid md:grid-cols-2 md:py-6 py-12">
+              <div class="flex flex-col justify-center mb-[50px] md:mb-0">
+                <p class="text-center md:text-4xl text-2xl font-bold text-white mb-4">
+                  <span class="borderOpacity inline-flex justify-center items-center bg-primary w-8 h-8 md:w-16 md:h-16 rounded-full">
+                    {index + 1}
+                  </span>
+                </p>
 
-              <div class="max-w-md mx-auto text-center md:text-left">
-                <h3 class="md:text-4xl text-3xl font-bold mb-4" set:html={item.title} />
-                <p class="text-2xl mb-2 text-navyBlue">{item.content}</p>
-                <p class="text-xl opacity-50">{item.subContent}</p>
+                <div class="max-w-md mx-auto text-center md:text-left">
+                  <h3
+                    class="md:text-4xl text-3xl font-bold mb-4"
+                    set:html={item.title}
+                  />
+                  <p class="text-2xl mb-2 text-navyBlue">{item.content}</p>
+                  <p class="text-xl opacity-50">{item.subContent}</p>
+                </div>
+              </div>
+
+              <div>
+                <Image
+                  src={item.image}
+                  width={1200}
+                  aspectRatio="16:9"
+                  alt={item.title}
+                />
               </div>
             </div>
-
-            <div>
-              <Image
-                src={item.image}
-                width={1200}
-                aspectRatio="16:9"
-                alt={item.title}
-              />
-            </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
@@ -83,6 +91,7 @@ const WHAT_WE_DO = [
       rgba(159, 190, 250, 0.2) 90%,
       rgba(0, 86.87, 255, 0.2) 100%
     );
+    box-shadow: -6px -6px 14px #00000030, 6px 6px 14px #00000030;
   }
   .borderOpacity {
     @apply relative;

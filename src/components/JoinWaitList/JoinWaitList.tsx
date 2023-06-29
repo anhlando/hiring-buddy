@@ -10,7 +10,7 @@ const JoinWaitList: React.FC<Props> = ({ className }) => {
     <div className={clsx(className)}>
       <button
         className={clsx(
-          `inline-flex justify-center items-center text-white text-sm py-3 px-8 bg-gradient-to-b from-violet-500 to-indigo-500 rounded-[25.04px]`,
+          `transition inline-flex justify-center items-center text-white text-sm py-3 px-8 bg-gradient-to-b from-violet-500 to-indigo-500 rounded-[25.04px] hover:from-[#0500FF] hover:to-[#0500FF]`,
         )}
       >
         <span className="mr-5 font-montserrat">Join waitlist!</span>
