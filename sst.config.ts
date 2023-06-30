@@ -25,6 +25,8 @@ export default {
       });
 
       const site = new StaticSite(stack, "web", {
+        buildOutput: "dist",
+        buildCommand: "npm run build",
         environment: {
           PUBLIC_API_ENDPOINT: api.url,
         },
