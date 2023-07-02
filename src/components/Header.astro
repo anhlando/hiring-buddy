@@ -1,5 +1,5 @@
 ---
-import HeaderMenu from './HeaderMenu'
+import HeaderMenu from "./HeaderMenu";
 import JoinWaitList from "../components/JoinWaitList";
 import logoFull from "../assets/logoFull.svg";
 
@@ -19,7 +19,7 @@ const links = [
 ];
 ---
 
-<header class="bg-white headerShadow relative z-20 py-3">
+<header class="bg-white sticky top-0 z-20 py-3" id="main-header">
   <div class="container mx-auto">
     <div class="flex items-center justify-between">
       <div class="flex w-full justify-between md:justify-normal md:w-auto">
@@ -37,7 +37,7 @@ const links = [
         <HeaderMenu client:idle />
       </div>
 
-      <JoinWaitList client:load className="hidden md:block"/>
+      <JoinWaitList client:load className="hidden md:block" />
     </div>
   </div>
 </header>
@@ -46,4 +46,21 @@ const links = [
   .headerShadow {
     box-shadow: 0px 15px 14px #e5e5e540;
   }
-  </style>
+</style>
+
+<script>
+  // get main-header
+  const mainHeader = document.getElementById("main-header");
+
+  if (mainHeader) {
+    // listen on page scroll change
+    window.addEventListener("scroll", () => {
+      // if scrollY > 0, add shadow
+      if (window.scrollY > 0) {
+        mainHeader.classList.add("headerShadow");
+      } else {
+        mainHeader.classList.remove("headerShadow");
+      }
+    });
+  }
+</script>
