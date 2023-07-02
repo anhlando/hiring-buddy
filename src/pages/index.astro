@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import ScrollText from "../components/ScrollText";
 import HowWeWork from "../components/HowWeWork.astro";
-import iconHeart from "../assets/icon-heart.png";
+import iconHeart from "../assets/heart-icon.svg";
 import JoinWaitList from "../components/JoinWaitList";
 
 import ap1 from "../assets/ap-1.svg";
@@ -35,8 +35,8 @@ const WHY_CHOSE_USE = [
 ---
 
 <Layout title="Hiring Buddy - The recruitment experience you'll love.">
-	<main>
-		<section class="pt-20 bg-white">
+	<main class="bg-[#FCFDFF]">
+		<section class="pt-20">
 			<div class="container mx-auto">
 				<h1 class="text-center mb-6">
 					The hiring experience <br /> you'll <Highlight>love</Highlight>
@@ -49,12 +49,14 @@ const WHY_CHOSE_USE = [
 			</div>
 
 			<div class="text-center mb-10">
-				<JoinWaitList />
+				<JoinWaitList client:load />
 			</div>
 			<VideoHero />
 		</section>
 
-		<section class="bg-white relative z-10 pt-20 pb-32">
+		<section
+			class="bg-white relative z-10 pt-20 pb-32 shadow-[0px_-32px_31px_0px_rgba(79,87,116,0.07)]"
+		>
 			<div class="container mx-auto">
 				<div class="grid md:grid-cols-3">
 					{
@@ -79,11 +81,17 @@ const WHY_CHOSE_USE = [
 					}
 				</div>
 			</div>
+
+			<div class="border-b absolute bottom-0 right-1/2 h-[1px] w-3/4 bg-[#E6E6E6] translate-x-1/2" />
 		</section>
 
 		<section class="bg-white">
 			<div class="container mx-auto">
-				<ScrollText text={SCROLL_TEXT} highlight={[29, 30, 31, 32]} client:load />
+				<ScrollText
+					text={SCROLL_TEXT}
+					highlight={[29, 30, 31, 32]}
+					client:load
+				/>
 			</div>
 		</section>
 
@@ -95,10 +103,10 @@ const WHY_CHOSE_USE = [
 			<div class="container text-center mx-auto py-32 md:py-40">
 				<div class="max-w-xl mx-auto">
 					<div class="flex justify-center mb-8">
-						<Image
-							src={iconHeart}
+						<img
+							src={iconHeart.src}
 							width={58}
-							aspectRatio="1:1"
+							height={58}
 							alt={"icon heart"}
 						/>
 					</div>
@@ -108,7 +116,7 @@ const WHY_CHOSE_USE = [
 						community.
 					</div>
 
-					<JoinWaitList className="mb-3" />
+					<JoinWaitList client:load className="mb-3" />
 					<div class="flex justify-center">
 						<div
 							class="w-[281px] text-center text-[#5F6368] text-sm font-normal"
@@ -121,3 +129,5 @@ const WHY_CHOSE_USE = [
 		</section>
 	</main>
 </Layout>
+
+<style></style>

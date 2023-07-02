@@ -52,7 +52,7 @@ const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
       <div className="sticky top-0 right-0 hidden">{visiblePct}</div>
       <div className="sticky top-4 h-[100vh] flex items-center">
         <p
-          className="lg:text-7xl md:text-6xl text-3xl font-poppins font-semibold lg:leading-[1.375] md:leading-[1.375] leading-[1.375] text-justify"
+          className="lg:text-7xl md:text-6xl text-3xl font-poppins font-semibold lg:leading-[1.375] md:leading-[1.375] leading-[1.375]"
           style={{ color: "#D9D9D9" }}
         >
           {words.map((word, index) => (

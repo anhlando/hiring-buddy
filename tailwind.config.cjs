@@ -31,6 +31,9 @@ module.exports = {
         poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
         montserrat: ['Montserrat Variable', ...defaultTheme.fontFamily.sans]
       },
+      boxShadow: {
+        innerMD: "inset 0px 0px 4px rgba(0, 0, 0, 0.25)",
+      }
     },
     container: {
       padding: '1rem',
