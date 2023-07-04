@@ -4,11 +4,12 @@ import screen1 from "../assets/screen-1.png";
 import screen2 from "../assets/screen-2.png";
 import screen3 from "../assets/screen-3.png";
 import screen4 from "../assets/screen-4.png";
+import HowWeWorkItem from "./HowWeWorkItem";
 
 const WHAT_WE_DO = [
   {
     title: "We get to <span class='highlight'>know you</span>",
-    content: "5 mins simple questionnaire to learn about you",
+    content: "5 mins vibe finder questionnaire to learn about you",
     subContent: "HiringBuddy proprietary framework",
     image: screen1,
   },
@@ -23,7 +24,7 @@ const WHAT_WE_DO = [
     title:
       "<span class='text-primary'>HiringBuddy</span> does the matching <span class='highlight'>instantly</span>",
     content:
-      "No resumes, no applications - companies will start the conversation with you",
+      "Buddy AI will deep-dive to find the right roles for you",
     subContent: "",
     image: screen3,
   },
@@ -41,7 +42,7 @@ const WHAT_WE_DO = [
     <div
       class="container mx-auto min-h-screen md:pt-40 md:pb-40 pt-20 pb-20 text-primaryDark"
     >
-      <h3 class="text-center md:mb-6 mb-4">The scientific approach</h3>
+      <h3 class="text-center md:mb-6 mb-4 md:text-2xl text-lg">The scientific approach</h3>
       <h2 class="text-center md:text-6xl text-4xl font-bold md:mb-24 mb-8">
         How HiringBuddy works
       </h2>
@@ -49,33 +50,14 @@ const WHAT_WE_DO = [
       <div>
         {
           WHAT_WE_DO.map((item, index) => (
-            <div class="grid md:grid-cols-2 md:py-40 py-12">
-              <div class="flex flex-col justify-center mb-[50px] md:mb-0">
-                <p class="text-center md:text-4xl text-2xl font-bold text-white mb-10">
-                  <span class="borderOpacity inline-flex justify-center items-center bg-primary w-8 h-8 md:w-16 md:h-16 rounded-full">
-                    {index + 1}
-                  </span>
-                </p>
-
-                <div class="max-w-md mx-auto text-center md:text-left">
-                  <h3
-                    class="md:text-4xl text-3xl font-bold mb-4"
-                    set:html={item.title}
-                  />
-                  <p class="text-2xl mb-2 text-navyBlue">{item.content}</p>
-                  <p class="text-xl opacity-50">{item.subContent}</p>
-                </div>
-              </div>
-
-              <div>
-                <Image
-                  src={item.image}
-                  width={1200}
-                  aspectRatio="16:9"
-                  alt={item.title}
-                />
-              </div>
-            </div>
+            <HowWeWorkItem
+              client:load
+              title={item.title}
+              content={item.content}
+              subContent={item.subContent}
+              image={item.image.src}
+              index={index + 1}
+            />
           ))
         }
       </div>
@@ -83,7 +65,7 @@ const WHAT_WE_DO = [
   </div>
 </div>
 
-<style>
+<style is:global>
   .bgLiner {
     background: linear-gradient(
       177deg,
@@ -95,18 +77,17 @@ const WHAT_WE_DO = [
   }
   .borderOpacity {
     @apply relative;
+    background-color: rgba(167, 180, 209, 0.3);
   }
 
-  .borderOpacity::before {
-    @apply rounded-full;
+  .content {
+    @apply rounded-full bg-primary inline-flex justify-center items-center;
     content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% + 1rem);
-    height: calc(100% + 1rem);
-    background-color: rgba(167, 180, 209, 0.3);
-    z-index: -1;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
   }
 </style>

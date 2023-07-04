@@ -28,8 +28,15 @@ const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
     observer.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (containerRef.current?.getBoundingClientRect().top && containerRef.current?.getBoundingClientRect().top > 0) {
+          if(!containerRef.current?.getBoundingClientRect().top) return;
+          if (
+            containerRef.current?.getBoundingClientRect().top > 0
+          ) {
             setVisiblePct(Math.floor(entry.intersectionRatio * 100));
+          }
+
+          if(containerRef.current?.getBoundingClientRect().top < 0) {
+            setVisiblePct(100);
           }
         });
       },
@@ -49,7 +56,7 @@ const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
 
   return (
     <div className={clsx(className, "h-[200vh] relative")}>
-      <div className="sticky top-0 right-0 hidden">{visiblePct}</div>
+      <div className="sticky top-20 right-0 hidden">{visiblePct}</div>
       <div className="sticky top-4 h-[100vh] flex items-center">
         <p
           className="lg:text-7xl md:text-6xl text-3xl font-poppins font-semibold lg:leading-[1.375] md:leading-[1.375] leading-[1.375]"
@@ -60,7 +67,11 @@ const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
               key={index}
               className={clsx(
                 "transition-colors",
-                (index / words.length) * 100 < visiblePct ? (highlight.includes(index) ? "text-primary" : "text-black") : ""
+                (index / words.length) * 100 < visiblePct
+                  ? highlight.includes(index)
+                    ? "text-primary"
+                    : "text-black"
+                  : ""
               )}
             >
               {word + " "}

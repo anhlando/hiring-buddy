@@ -18,3 +18,25 @@ h2 {
 h4 {
   @apply font-sans text-lg;
 }
+
+/* animation fade in up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.how-it-works-fadeInUp {
+  animation-duration: 1.5s;
+  animation-name: fadeInUp;
+}

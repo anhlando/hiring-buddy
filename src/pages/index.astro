@@ -12,13 +12,12 @@ import ap3 from "../assets/ap-3.svg";
 import Highlight from "../components/Highlight.astro";
 import VideoHero from "../components/VideoHero.astro";
 
-const SCROLL_TEXT = `We get you, recruitment is broken. You're applying to tonnes of roles, just to be ghosted and rejected.
-We believe recruitment should be effortless and enjoyable. We've got your back. Let's fix this together!`;
+const SCROLL_TEXT = `Recruitment is broken! You're applying to tonnes of roles, just to be ghosted and rejected. We believe recruitment should be effortless and enjoyable. Let's fix this together!`;
 
 const WHY_CHOSE_USE = [
 	{
-		title: "No cover letters, no resumes",
-		description: "Simply connect with your LinkedIn profile",
+		title: "No job applications, no cover letters",
+		description: "Simply connect your LinkedIn profile",
 		image: ap1,
 	},
 	{
@@ -27,8 +26,8 @@ const WHY_CHOSE_USE = [
 		image: ap2,
 	},
 	{
-		title: "Land the ideal job",
-		description: "Companies initiate connect with you",
+		title: "Companies connect with you",
+		description: "Land your ideal job",
 		image: ap3,
 	},
 ];
@@ -43,8 +42,8 @@ const WHY_CHOSE_USE = [
 				</h1>
 
 				<p class="text-center mb-10 text-lg">
-					Hiring buddy understands your strengths and drivers to connect you
-					with a workspace to thrive in!
+					No job applications, no cover letters, no ghosting... What?<br/> Get ready
+					for the new world order!
 				</p>
 			</div>
 
@@ -72,7 +71,7 @@ const WHY_CHOSE_USE = [
 									</div>
 
 									<div class="flex-1">
-										<h3 class="font-bold mb-3 text-base">{item.title}</h3>
+										<h3 class="font-bold mb-3 text-lg ">{item.title}</h3>
 										<p class="font-base">{item.description}</p>
 									</div>
 								</div>
@@ -82,14 +81,17 @@ const WHY_CHOSE_USE = [
 				</div>
 			</div>
 
-			<div class="border-b absolute bottom-0 right-1/2 h-[1px] w-3/4 bg-[#E6E6E6] translate-x-1/2" />
+			<div
+				class="border-b absolute bottom-0 right-1/2 h-[1px] w-3/4 bg-[#E6E6E6] translate-x-1/2"
+			>
+			</div>
 		</section>
 
 		<section class="bg-white">
 			<div class="container mx-auto">
 				<ScrollText
 					text={SCROLL_TEXT}
-					highlight={[29, 30, 31, 32]}
+					highlight={[23, 24, 25, 26]}
 					client:load
 				/>
 			</div>
