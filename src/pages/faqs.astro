@@ -1,10 +1,96 @@
 ---
-import CommingSoon from "../components/CommingSoon.astro";
+// import CommingSoon from "../components/CommingSoon.astro";
 import Layout from "../layouts/Layout.astro";
+
+const CANDIDATES = [
+  {
+    title: "What is HiringBuddy?",
+    description:
+      "HiringBuddy is a recruitment platform that empowers candidates to supercharge their career with just one application in under 10 minutes.",
+  },
+  {
+    title: "How does it work?",
+    description:
+      "Candidates complete a short application form and upload their resume. HiringBuddy then matches candidates to roles based on their skills and experience.",
+  },
+  {
+    title: "How much does it cost candidates?",
+    description:
+      "Initial insights are free and a detailed report is available for a small charge.",
+  },
+  {
+    title: "Is HiringBuddy available internationally?",
+    description:
+      "At the the moment, HiringBuddy is only available in Australia, but we certainly see international expansion happening soon.",
+  },
+  {
+    title: "Is my information safe?",
+    description:
+      "All data is encrypted in transit and at rest, whether you have a Free or Paid plan, your information is secure with HiringBuddy.",
+  },
+  {
+    title: "When is HiringBuddy going live?",
+    description:
+      "We are in the middle of development, plan to go-live with beta version in early-2024.",
+  },
+  {
+    title: "Who can use HiringBuddy?",
+    description: "Candidates who are looking for a new career or role.",
+  },
+];
+
+const CLIENTS = [
+  {
+    title: "How much does it cost to companies?",
+    description: "Flat monthly fee based on company size with unlimited hiring.",
+  },{
+    title: "What enterprise grade security standards do you comply with?",
+    description: "...",
+  },
+  {
+    title: "How much does it cost to companies?",
+    description: "Flat monthly fee based on company size with unlimited hiring."
+  }
+]
 ---
 
 <Layout title="FAQs.">
-  <main class="container mx-auto">
-    <CommingSoon />
+  <main class="container mx-auto min-h-screen">
+    <div class="pt-28">
+      <h1 class="text-center mb-14">FAQs</h1>
+
+      <p class="text-center text-[22px] max-w-[700px] mx-auto mb-14">
+        Here is a list of the most commonly asked questions with quick and easy
+        answers. If you don't find what you're looking for, don't hesitate to
+        <span class="underline">reach out to us.</span>
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-20">
+        <div>
+          <h4 class="text-3xl mb-8">Candidates</h4>
+
+          {
+            CANDIDATES.map((candidate) => (
+              <div class="mb-8">
+                <h5 class="font-bold text-lg mb-2">{candidate.title}</h5>
+                <p>{candidate.description}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div>
+          <h4 class="text-3xl mb-8">Clients</h4>
+
+          {
+            CLIENTS.map((candidate) => (
+              <div class="mb-8">
+                <h5 class="font-bold text-lg mb-2">{candidate.title}</h5>
+                <p>{candidate.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>

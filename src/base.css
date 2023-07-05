@@ -40,3 +40,7 @@ h4 {
   animation-duration: 1.5s;
   animation-name: fadeInUp;
 }
+
+.videoBoxShadow {
+  box-shadow: 0px 5.585509777069092px 30.161752700805664px 0px rgba(88, 124, 209, 0.24);
+}

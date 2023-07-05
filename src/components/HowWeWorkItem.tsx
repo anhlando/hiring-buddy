@@ -8,18 +8,9 @@ interface Props {
   content: string;
   subContent: string;
   image: string;
+  video?: string;
+  video2?: string;
 }
-
-// fnc get threshold
-const getThresholds = () => {
-  const thresholds = [];
-
-  for (let i = 0; i <= 1.0; i += 0.1) {
-    thresholds.push(i);
-  }
-
-  return thresholds;
-};
 
 const HowWeWorkItem: React.FC<Props> = (item) => {
   const { ref, inView, entry } = useInView({
@@ -32,7 +23,7 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
     (inView && (entry?.intersectionRatio || 0) > 0.15);
 
   return (
-    <div className="grid md:grid-cols-2 md:py-40 py-12" ref={ref}>
+    <div className="grid md:grid-cols-2 md:py-32 py-12" ref={ref}>
       <div className={clsx("flex flex-col justify-center mb-[50px] md:mb-0")}>
         <p
           className={
@@ -61,7 +52,24 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
       </div>
 
       <div>
-        <img src={item.image} alt={item.title} className="w-full" />
+        {item.video ? (
+          <div className="relative w-full lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
+            <video src={item.video} autoPlay loop muted className="scale-[1.009]" />
+            {item.video2 && (
+              <div className="absolute w-1/3 md:bottom-3 md:right-3 bottom-1 right-1 lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
+                <video
+                  src={item.video2}
+                  autoPlay
+                  loop
+                  muted
+                  className=" scale-[1.01]"
+                />
+              </div>
+            )}
+          </div>
+        ) : (
+          <img src={item.image} alt={item.title} className="w-full" />
+        )}
       </div>
     </div>
   );

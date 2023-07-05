@@ -12,6 +12,7 @@ const WHAT_WE_DO = [
     content: "5 mins vibe finder questionnaire to learn about you",
     subContent: "HiringBuddy proprietary framework",
     image: screen1,
+    video: "/videos/HiringBuddy - Frame 1.mp4",
   },
   {
     title: "We show your <span class='highlight'>true value</span>",
@@ -19,30 +20,38 @@ const WHAT_WE_DO = [
       "Immediate access to your strengths, differentiators and ideal working environments",
     subContent: "",
     image: screen2,
+    video: "/videos/desktop-screen-1.mp4",
   },
   {
     title:
       "<span class='text-primary'>HiringBuddy</span> does the matching <span class='highlight'>instantly</span>",
-    content:
-      "Buddy AI will deep-dive to find the right roles for you",
+    content: "Buddy AI will deep-dive to find the right roles for you",
     subContent: "",
     image: screen3,
+    video: "/videos/HiringBuddy - Frame 4.mp4",
+    video2: "/videos/HiringBuddy - Frame 3.mp4",
   },
   {
     title: "Land your <span class='highlight'>ideal job</span>",
     content: "No waiting for weeks or months - get hired in days",
     subContent: "",
     image: screen4,
+    video: "/videos/HiringBuddy - Frame 4.mp4",
+    video2: "/videos/HiringBuddy - Frame 3.mp4",
   },
 ];
 ---
 
 <div class="py-4">
-  <div class="bgLiner md:rounded-tl-[12rem] md:rounded-br-[12rem] rounded-tl-[4rem] rounded-br-[4rem]">
+  <div
+    class="bgLiner md:rounded-tl-[12rem] md:rounded-br-[12rem] rounded-tl-[4rem] rounded-br-[4rem]"
+  >
     <div
       class="container mx-auto min-h-screen md:pt-40 md:pb-40 pt-20 pb-20 text-primaryDark"
     >
-      <h3 class="text-center md:mb-6 mb-4 md:text-2xl text-lg">The scientific approach</h3>
+      <h3 class="text-center md:mb-6 mb-4 md:text-2xl text-lg">
+        The scientific approach
+      </h3>
       <h2 class="text-center md:text-6xl text-4xl font-bold md:mb-24 mb-8">
         How HiringBuddy works
       </h2>
@@ -57,6 +66,8 @@ const WHAT_WE_DO = [
               subContent={item.subContent}
               image={item.image.src}
               index={index + 1}
+              video={item.video}
+              video2={item.video2}
             />
           ))
         }
