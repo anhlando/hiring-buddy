@@ -53,10 +53,12 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
 
       <div>
         {item.video ? (
-          <div className="relative w-full lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
-            <video src={item.video} autoPlay loop muted className="scale-[1.009]" />
+          <div className="relative w-full">
+            <div className="relative w-full lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
+              <video src={item.video} autoPlay loop muted className="scale-[1.009]" />
+            </div>
             {item.video2 && (
-              <div className="absolute w-1/3 md:bottom-3 md:right-3 bottom-1 right-1 lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
+              <div className="absolute w-[34%] md:-bottom-6 md:-right-6 bottom-1 right-1 lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
                 <video
                   src={item.video2}
                   autoPlay
