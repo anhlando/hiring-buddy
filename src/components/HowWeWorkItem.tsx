@@ -10,6 +10,8 @@ interface Props {
   image: string;
   video?: string;
   video2?: string;
+  videoAutoplay?: boolean;
+  video2Autoplay?: boolean;
 }
 
 const HowWeWorkItem: React.FC<Props> = (item) => {
@@ -55,13 +57,21 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
         {item.video ? (
           <div className="relative w-full">
             <div className="relative w-full lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
-              <video src={item.video} autoPlay loop muted className="scale-[1.009]" />
+              <video
+                src={item.video}
+                autoPlay={item.videoAutoplay}
+                playsInline={item.videoAutoplay}
+                loop
+                muted
+                className="scale-[1.009]"
+              />
             </div>
             {item.video2 && (
               <div className="absolute w-[34%] md:-bottom-6 md:-right-6 bottom-1 right-1 lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
                 <video
                   src={item.video2}
-                  autoPlay
+                  autoPlay={item.video2Autoplay}
+                  playsInline={item.video2Autoplay}
                   loop
                   muted
                   className=" scale-[1.01]"

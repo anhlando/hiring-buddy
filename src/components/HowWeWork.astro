@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import screen1 from "../assets/screen-1.png";
 import screen2 from "../assets/screen-2.png";
 import screen3 from "../assets/screen-3.png";
@@ -29,7 +28,9 @@ const WHAT_WE_DO = [
     subContent: "",
     image: screen3,
     video: "/videos/HiringBuddy - Frame 4.mp4",
-    video2: "/videos/HiringBuddy - Frame 3.mp4",
+    video2: "/videos/Chat_window_frame3.mp4",
+    videoAutoplay: true,
+    video2Autoplay: true,
   },
   {
     title: "Land your <span class='highlight'>ideal job</span>",
@@ -37,7 +38,9 @@ const WHAT_WE_DO = [
     subContent: "",
     image: screen4,
     video: "/videos/HiringBuddy - Frame 4.mp4",
-    video2: "/videos/HiringBuddy - Frame 3.mp4",
+    video2: "/videos/Chat_window_frame3.mp4",
+    videoAutoplay: true,
+    video2Autoplay: true,
   },
 ];
 ---
@@ -68,6 +71,8 @@ const WHAT_WE_DO = [
               index={index + 1}
               video={item.video}
               video2={item.video2}
+              videoAutoplay={item.videoAutoplay}
+              video2Autoplay={item.video2Autoplay}
             />
           ))
         }
