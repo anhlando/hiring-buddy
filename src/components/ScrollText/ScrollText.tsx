@@ -55,7 +55,7 @@ const ScrollText: React.FC<Props> = ({ className, text, highlight = [] }) => {
   }, []);
 
   return (
-    <div className={clsx(className, "h-[200vh] relative")}>
+    <div className={clsx(className, "relative")} style={{ height: 'calc(190vh + 120px)' }}>
       <div className="sticky top-20 right-0 hidden">{visiblePct}</div>
       <div className="sticky top-4 md:h-[100vh] h-[80vh] flex items-center">
         <p
