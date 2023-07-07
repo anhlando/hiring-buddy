@@ -41,7 +41,7 @@ const HeaderMenu: React.FC<Props> = ({ className }) => {
         {links.map((link) => (
           <a
             key={`${link.href}${link.label}`}
-            className="inline-flex justify-center items-center mr-6 text-boulder text-sm"
+            className="inline-flex justify-center items-center mr-6 text-boulder text-sm hover:text-primary transition-colors"
             href={link.href}
           >
             {link.label}
@@ -66,7 +66,7 @@ const HeaderMenu: React.FC<Props> = ({ className }) => {
           {links.map((link, index) => (
             <div className='container' key={`${link.href}${link.label}`}>
               <a
-                className={clsx("flex justify-center items-center text-boulder text-center text-xl py-3", index !== links.length - 1 && 'border-b border-gray-200')}
+                className={clsx("flex justify-center items-center text-boulder text-center text-xl py-3 hover:text-primary", index !== links.length - 1 && 'border-b border-gray-200')}
                 href={link.href}
               >
                 {link.label}

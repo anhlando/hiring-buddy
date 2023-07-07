@@ -22,7 +22,7 @@ const links = [
 <header class="bg-white sticky top-0 z-20 py-3" id="main-header">
   <div class="container mx-auto">
     <div class="flex items-center justify-between">
-      <div class="flex w-full justify-between md:justify-normal md:w-auto">
+      <div class="flex w-full justify-between md:justify-normal">
         <div class="mr-20" style="width: 153px">
           <a href="/">
             <img
@@ -34,10 +34,13 @@ const links = [
           </a>
         </div>
 
-        <HeaderMenu client:idle />
+        <HeaderMenu client:idle className="flex-1" />
+
       </div>
 
-      <JoinWaitList client:load className="hidden md:block" />
+      <div class="w-[220px] whitespace-nowrap">
+        <JoinWaitList client:load className="hidden md:block" />
+        </div>  
     </div>
   </div>
 </header>
