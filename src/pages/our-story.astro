@@ -1,10 +1,108 @@
 ---
-import CommingSoon from "../components/CommingSoon.astro";
 import Layout from "../layouts/Layout.astro";
+
+const CULTURE = [
+  {
+    title: "Lead with empathy",
+    description: "Some text about the value",
+  },
+  {
+    title: "Play with the team",
+    description: "Some text about the value",
+  },
+  {
+    title: "Take ownership",
+    description: "Some text about the value",
+  },
+  {
+    title: "Seek feedback and iterate",
+    description: "Some text about the value",
+  },
+  {
+    title: "Never settle, keep reinventing",
+    description: "Some text about the value",
+  },
+];
 ---
 
 <Layout title="Our story.">
-  <main class="container mx-auto">
-    <CommingSoon />
+  <main class="container mx-auto min-h-screen">
+    <div class="pt-28">
+      <h1 class="text-center mb-14">Our Journey</h1>
+
+      <div class="grid md:grid-cols-2 mb-24 md:gap-20 gap-10">
+        <div class="order-2 prose lg:prose-base">
+          <p>
+            HiringBuddy was born after our founder Darren Terkel, was getting
+            disillusioned with the recruitment industry after working in it for
+            15+ years. The industry is broken and needs fundamental change.
+          </p>
+
+          <p>
+            There is a burning problem in the industry... <strong
+              >the barrier to changing jobs is too high:</strong
+            >
+          </p>
+
+          <p>
+            Our founder set off on a journey to truly disrupt the industry to
+            benefit both candidates and companies.
+          </p>
+
+          <p>
+            Candidates need to be valued for who they are, their potential and
+            to find an environment where they can thrive.
+          </p>
+
+          <p>
+            Companies need to spend less time on administration and spend the
+            majority of their time speaking with the right candidates.
+          </p>
+        </div>              
+        <div class="order-1 md:order-3 bg-gray-100 h-[400px] md:mb-6 rounded shadow"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 mb-28 md:gap-20 gap-10">
+        <div class="bg-gray-100 h-[400px] rounded shadow"></div>
+        <div class="prose lg:prose-base">
+          <p>
+            The starting point was to eliminate the pain points of the
+            recruitment process by speaking with candidates and clients and
+            create a seamless solution for both.
+          </p>
+
+          <p><strong>A hyper-personalised experience.</strong></p>
+
+          <p>
+            THRIIVE is a recruitment platform built using psychometric insights
+            and AI to match the right candidates to the right companies in
+            real-time.
+          </p>
+
+          <p>
+            <strong
+              >THRIIVE exists to redefine the future of recruitment.</strong
+            >
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-center mb-12">Culture and Values</h2>
+
+        <div class="flex flex-wrap items-center justify-center">
+          {CULTURE.map((value) => (
+            <div class="flex-none md:w-1/3 w-full text-center mb-16">
+              <div class="bg-gray-100 w-[150px] h-[150px] inline-block mb-6 rounded shadow"></div>
+
+              <div>
+                <h3 class="font-bold mb-2">{value.title}</h3>
+                <p>{value.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
