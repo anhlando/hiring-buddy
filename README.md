@@ -1,3 +1,9 @@
+# Config
+
+```
+AWS_PROFILE=sst-prod npx sst secrets set HUBSPOT_API_KEY <key>
+```
+
 # Astro Starter Kit: Basics
 
 ```
