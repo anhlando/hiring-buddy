@@ -80,7 +80,7 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
             )}
           </div>
         ) : (
-          <img src={item.image} alt={item.title} className="w-full" />
+          <img src={item.image} alt={item.title} className="lg:w-full md:w-3/4" />
         )}
       </div>
     </div>

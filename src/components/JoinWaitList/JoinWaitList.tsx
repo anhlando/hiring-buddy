@@ -109,7 +109,7 @@ const JoinWaitList: React.FC<Props> = ({ className }) => {
 
                   <div className={clsx(isSuccess && "hidden")}>
                     <p className="mt-2">
-                      We will notify you when the product is ready for you to.
+                      Count me in! We'll let you know when we're about to go live
                     </p>
 
                     <div className="mt-2">
@@ -141,8 +141,7 @@ const JoinWaitList: React.FC<Props> = ({ className }) => {
 
                   <div className={clsx(!isSuccess && "hidden")}>
                     <p className="mt-2">
-                      Thank you for joining the waitlist! We will notify you
-                      when the product is ready for you to.
+                    Congratulations, you've joined our waitlist and we're excited to have you join our journey!
                     </p>
 
                     <div className="mt-4">
