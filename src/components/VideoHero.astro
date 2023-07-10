@@ -28,7 +28,10 @@ import VideoHeroBg from './VideoHeroBg.astro';
   if (videoHero) {
     videoHero.addEventListener("loadeddata", () => {
       const videoHeroBg = document.getElementById("video-hero-bg");
-      videoHeroBg?.classList.remove("hidden");
+      // after 1 second 
+      setTimeout(() => {
+        videoHeroBg?.classList.remove("hidden");
+      }, 1000);
     });
   }
 </script>
