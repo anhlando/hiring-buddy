@@ -14,6 +14,8 @@ interface Props {
   video2Autoplay?: boolean;
 }
 
+const isMp4 = (url: string) => url.endsWith(".mp4");
+
 const HowWeWorkItem: React.FC<Props> = (item) => {
   const { ref, inView, entry } = useInView({
     /* Optional options */
@@ -68,19 +70,27 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
             </div>
             {item.video2 && (
               <div className="absolute w-[34%] md:-bottom-6 md:-right-6 bottom-1 right-1 lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
-                <video
-                  src={item.video2}
-                  autoPlay={item.video2Autoplay}
-                  playsInline={item.video2Autoplay}
-                  loop
-                  muted
-                  className=" scale-[1.01]"
-                />
+                {isMp4(item.video2) ? (
+                  <video
+                    src={item.video2}
+                    autoPlay={item.video2Autoplay}
+                    playsInline={item.video2Autoplay}
+                    loop
+                    muted
+                    className=" scale-[1.01]"
+                  />
+                ) : (
+                  <img src={item.video2} className=" scale-[1.01]" />
+                )}
               </div>
             )}
           </div>
         ) : (
-          <img src={item.image} alt={item.title} className="lg:w-full md:w-3/4" />
+          <img
+            src={item.image}
+            alt={item.title}
+            className="lg:w-full md:w-3/4"
+          />
         )}
       </div>
     </div>
