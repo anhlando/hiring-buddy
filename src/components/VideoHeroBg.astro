@@ -1,0 +1,105 @@
+<div class="bg-container max-w-full h-full">
+  <div class="bg-row">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </div>
+  <div class="bg-row">
+    <div class="box3"></div>
+    <div class="box4"></div>
+  </div>
+</div>
+
+<style>
+  .bg-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .bg-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 50%;
+  }
+
+  .box1 {
+    width: 50%;
+    height: 50%;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    margin: 0 10px; /* Adjust the spacing between boxes as needed */
+    box-shadow: 0px 4px 104px 10px #86b9ff; /* Initial shadow */
+    border-radius: 156.5px 97px 64px 64px; /* Initial border radius */
+    animation: moveShadow1 6s infinite alternate; /* Add animation */
+  }
+
+  .box2 {
+    width: 50%;
+    height: 50%;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    margin: 0 10px; /* Adjust the spacing between boxes as needed */
+    box-shadow: 300px 2px 90px rgba(0, 255, 0, 0.2); /* Green shadow */
+    animation: moveShadow2 6s infinite alternate; /* Add animation */
+  }
+
+  .box3 {
+    width: 50%;
+    height: 50%;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    margin: 0 10px; /* Adjust the spacing between boxes as needed */
+    box-shadow: -300px 2px 90px rgba(0, 0, 255, 0.2);
+    animation: moveShadow3 11s infinite alternate; /* Add animation */
+  }
+
+  .box4 {
+    width: 50%;
+    height: 50%;
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    box-shadow: 300px 2px 90px rgba(255, 255, 0, 0.2);
+    animation: moveShadow4 8s infinite alternate;
+  }
+
+  @keyframes moveShadow1 {
+    0% {
+      box-shadow: -100px 4px 104px 10px #86b9ff;
+      border-radius: 156.5px 97px 64px 64px;
+    }
+    100% {
+      box-shadow: -49px 4px 128px 10px #217eff;
+      border-radius: 156.5px 97px 64px 64px;
+    }
+  }
+
+  @keyframes moveShadow2 {
+    0% {
+      box-shadow: 0px 4px 142px 10px #9abaff;
+    }
+    100% {
+      box-shadow: 147px 4px 142px 10px rgba(255, 190, 28, 0.54);
+    }
+  }
+
+  @keyframes moveShadow3 {
+    0% {
+      box-shadow: -300px 2px 90px rgba(0, 0, 255, 0.2);
+    }
+    100% {
+      box-shadow: -350px 2px 90px rgba(0, 0, 255, 0.2);
+    }
+  }
+
+  @keyframes moveShadow4 {
+    0% {
+      box-shadow: 111px 4px 124px 10px rgba(88, 142, 246, 0.6);
+    }
+    100% {
+      box-shadow: 150px 0px 124px 10px rgba(246, 88, 231, 0.6);
+    }
+  }
+</style>
