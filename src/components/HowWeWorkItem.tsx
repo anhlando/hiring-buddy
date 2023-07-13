@@ -12,6 +12,7 @@ interface Props {
   video2?: string;
   videoAutoplay?: boolean;
   video2Autoplay?: boolean;
+  singleColumn?: boolean;
 }
 
 const isMp4 = (url: string) => url.endsWith(".mp4");
@@ -27,7 +28,7 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
     (inView && (entry?.intersectionRatio || 0) > 0.15);
 
   return (
-    <div className="grid md:grid-cols-2 md:py-32 py-12" ref={ref}>
+    <div className={clsx("grid md:py-32 py-12", item.singleColumn ? "md:grid-cols-1" : "md:grid-cols-2")} ref={ref}>
       <div className={clsx("flex flex-col justify-center mb-[50px] md:mb-0")}>
         <p
           className={
@@ -41,13 +42,13 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
 
         <div
           className={clsx(
-            "max-w-md mx-auto text-center md:text-left",
+            "mx-auto text-center",
+            item.singleColumn ? "max-w-2xl" : "max-w-md md:text-left",
             isVisible && "how-it-works-fadeInUp"
           )}
         >
           <h3
             className="md:text-4xl text-3xl font-bold mb-4"
-            // set html
             dangerouslySetInnerHTML={{ __html: item.title }}
           />
           <p className="text-2xl mb-2 text-navyBlue">{item.content}</p>
@@ -55,9 +56,9 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
         </div>
       </div>
 
-      <div>
+      <>
         {item.video ? (
-          <div className="relative w-full">
+          <div className={clsx("relative", item.singleColumn ? "max-w-[900px]" : "w-full")}>
             <div className="relative w-full lg:rounded-xl md:rounded-[10px] rounded-[10px] overflow-hidden videoBoxShadow">
               {isMp4(item.video) ? (
                 <video
@@ -93,10 +94,10 @@ const HowWeWorkItem: React.FC<Props> = (item) => {
           <img
             src={item.image}
             alt={item.title}
-            className="lg:w-full md:w-3/4"
+            className={clsx(item.singleColumn ? "max-w-[900px] w-full mx-auto" : "lg:w-full md:w-3/4")}
           />
         )}
-      </div>
+      </>
     </div>
   );
 };

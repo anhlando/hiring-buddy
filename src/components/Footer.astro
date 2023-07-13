@@ -2,7 +2,7 @@
 const LINKS = [
   {
     label: "Our Story",
-    url: "/our-story",
+    url: "/our-story/",
   },
   // {
   //   label: "Team",
@@ -18,18 +18,18 @@ const LINKS = [
   // },
   {
     label: "Client",
-    url: "/client",
+    url: "/client/",
   },
 ];
 ---
 
 <footer class="bg-white">
-  <div class="container mx-auto">
+  <div class="container mx-auto py-20">
     <div class="flex md:justify-center justify-evenly items-center">
       {LINKS.map((item) => <a class="md:py-6 md:px-10 py-3 text-gray-400" href={item.url}>{item.label}</a>)}
     </div>
-    <div class="text-center">
-      <p>© 2023 Hiring buddy</p>
-    </div>
   </div>
+  <!-- <div class="text-center text-sm">
+    <p>© 2023 Hiring buddy</p>
+  </div> -->
 </footer>

@@ -3,6 +3,7 @@ import screen1 from "../assets/client-screen1.png";
 import screen2 from "../assets/client-screen2.png";
 import screen3 from "../assets/client-screen3.png";
 import screen4 from "../assets/client-screen4.png";
+import BookDemo from "./BookDemo";
 import HowWeWorkItem from "./HowWeWorkItem";
 
 const WHAT_WE_DO = [
@@ -77,9 +78,14 @@ const WHAT_WE_DO = [
               video2={item.video2}
               videoAutoplay={item.videoAutoplay}
               video2Autoplay={item.video2Autoplay}
+              singleColumn
             />
           ))
         }
+      </div>
+
+			<div class="text-center">
+        <BookDemo client:load className="mb-3" />
       </div>
     </div>
   </div>
