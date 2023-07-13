@@ -1,10 +1,148 @@
 ---
-import CommingSoon from "../components/CommingSoon.astro";
+// import CommingSoon from "../components/CommingSoon.astro";
+// import Layout from "../layouts/Layout.astro";
+// ---
+
+// <Layout title="Client.">
+//   <main class="container mx-auto">
+//     <CommingSoon />
+//   </main>
+// </Layout>
+
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import ScrollText from "../components/ScrollText";
+// import HowWeWork from "../components/HowWeWork.astro";
+import HowWeWork from "../components/HowWeWorkClient.astro";
+import iconHeart from "../assets/heart-icon-2.svg";
+import JoinWaitList from "../components/JoinWaitList";
+import BookDemo from "../components/BookDemo";
+
+// import ap1 from "../assets/ap-1.svg";
+// import ap2 from "../assets/ap-2.svg";
+// import ap3 from "../assets/ap-3.svg";
+import usp1 from "../assets/usp1.svg";
+import usp2 from "../assets/usp2.svg";
+import usp3 from "../assets/usp3.svg";
+import Highlight from "../components/Highlight.astro";
+// import VideoHero from "../components/VideoHero.astro";
+import ImageHero from "../components/ImageHero.astro";
+
+const SCROLL_TEXT = `Recruitment is broken! You're applying to tonnes of roles, just to be ghosted and rejected. We believe recruitment should be effortless and enjoyable. Let's fix this together!`;
+
+const WHY_CHOSE_USE = [
+	{
+		// title: "No job applications, no cover letters",
+		// description: "Simply connect your LinkedIn profile",
+		// image: ap1,
+    title: "No job adverts, no wasted admin",
+		description: "HiringBuddy questionnaire will capture your unique needs",
+		image: usp1,
+	},
+	{
+		title: "Buddy AI instant Top5",
+		description: "No need to reject 100s of candidates, we shortlist top 5 for you",
+		image: usp2,
+	},
+	{
+		title: "Move straight to interviews",
+		description: "Reduce time to hire by 80% and cost to hire by 50%",
+		image: usp3,
+	},
+];
 ---
 
-<Layout title="Client.">
-  <main class="container mx-auto">
-    <CommingSoon />
-  </main>
+<Layout title="Hiring Buddy - The recruitment experience you'll love.">
+	<main class="bg-[#FCFDFF]">
+		<section class="pt-20 overflow-hidden">
+			<div class="container mx-auto">
+				<h1 class="text-center mb-6">
+					Access <Highlight>top</Highlight> talent in real time. 
+				</h1>
+
+				<p class="text-center mb-10 text-lg">
+					No job adverts. No wasted admin. <br/>Connect with motivated talent instantly. 
+				</p>
+			</div>
+
+			<div class="text-center mb-10">
+				<BookDemo client:load />
+			</div>
+			<ImageHero />
+		</section>
+
+		<section
+			class="bg-white relative z-10 pt-20 shadow-[0px_-32px_31px_0px_rgba(79,87,116,0.07)]"
+		>
+			<div class="container mx-auto">
+				<div class="grid md:grid-cols-3">
+					{
+						WHY_CHOSE_USE.map((item) => (
+							<div class="flex md:justify-center mb-12 md:mb-0">
+								<div class="flex md:flex-col md:justify-center md:items-center md:text-center md:max-w-[330px] px-1">
+									<div class="md:mb-5 flex-none w-12 mr-6 md:mr-0 pt-1 md:pt-0">
+										<img
+											src={item.image.src}
+											width={item.image.width}
+											height={item.image.height}
+										/>
+									</div>
+
+									<div class="flex-1">
+										<h3 class="font-bold mb-3 text-lg ">{item.title}</h3>
+										<p class="font-base">{item.description}</p>
+									</div>
+								</div>
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<!-- <section class="bg-white md:-mt-14">
+			<div class="container mx-auto">
+				<ScrollText
+					text={SCROLL_TEXT}
+					highlight={[23, 24, 25, 26]}
+					client:load
+				/>
+			</div>
+		</section> -->
+
+		<section>
+			<HowWeWork />
+		</section>
+
+		<section class="bg-white">
+			<div class="container text-center mx-auto py-32 md:py-40">
+				<div class="max-w-xl mx-auto">
+					<!-- <div class="flex justify-center mb-8">
+						<img
+							src={iconHeart.src}
+							width={58}
+							height={58}
+							alt={"icon heart"}
+						/>
+					</div>
+
+					<div class="text-center mb-10 text-black text-[26px] leading-10">
+						Register your interest for early access to HiringBuddy beta
+						community.
+					</div> -->
+
+					<BookDemo client:load className="mb-3" />
+					<div class="flex justify-center">
+						<div
+							class="w-[281px] text-center text-[#5F6368] text-sm font-normal"
+						>
+							<!-- Don't worry, we will not share anything with your network -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style></style>

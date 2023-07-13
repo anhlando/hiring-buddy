@@ -1,0 +1,35 @@
+---
+import VideoHeroBg from './VideoHeroBg.astro';
+import image from "../assets/client-frame.svg";
+---
+
+<div class="flex justify-center">
+  <div class="md:w-1/2 md:-mb-48 relative md:right-0 -right-6 md:min-h-[400px] lg:min-h-[600px]">
+    <div
+      style=`transform: translate(-50%, -50%)`
+      class="w-[95%] h-[95%] z-10 absolute top-1/2 left-1/2 bg-no-repeat bg-contain hidden"
+      id="video-hero-bg"
+    >
+      <VideoHeroBg />
+    </div>
+    <img
+      id="video-hero"
+      src={image.src}
+      width="100%"
+      class="lg:rounded-2xl md:rounded-[12px] rounded-[10px] overflow-hidden z-10 relative"></img>
+  </div>
+</div>
+
+<!-- <script>
+  const videoHero = document.getElementById("video-hero");
+
+  if (videoHero) {
+    videoHero.addEventListener("loadeddata", () => {
+      const videoHeroBg = document.getElementById("video-hero-bg");
+      // after 1 second 
+      setTimeout(() => {
+        videoHeroBg?.classList.remove("hidden");
+      }, 500);
+    });
+  }
+</script> -->
