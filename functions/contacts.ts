@@ -34,7 +34,7 @@ export const handler = ApiHandler(async (event) => {
     // create contacts
   await hubspotClient.crm.contacts.basicApi.create({
     properties: {
-      hubspot_owner_id: "39669329",
+      hubspot_owner_id: "465064964",
       email: bodyParsed.email,
       firstname: bodyParsed.firstname || "",
       lastname: bodyParsed.lastname || "",
