@@ -7,16 +7,16 @@ interface Props {
 }
 
 const links = [
-  {
-    href: "/our-story",
-    label: "Our Story",
-  },
+  // {
+  //   href: "/our-story",
+  //   label: "Our Story",
+  // },
   // {
   //   href: "/our-team",
   //   label: "Team",
   // },
   {
-    href: "/client",
+    href: "/client/",
     label: "Client",
   },
 ];
