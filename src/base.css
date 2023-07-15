@@ -6,8 +6,12 @@
 h1 {
   @apply font-poppins font-bold leading-tight text-5xl;
 
-  @screen lg {
+  @screen xl {
     font-size: 4.75rem;
+  }
+
+  @screen lg {
+    font-size: 3.5rem;
   }
 }
 
