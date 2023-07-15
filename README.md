@@ -1,7 +1,15 @@
 # Config
 
+SSM Parameters
+
 ```
-AWS_PROFILE=sst-prod npx sst secrets set HUBSPOT_API_KEY <key>
+AWS_PROFILE=sst-prod npx sst secrets set HUBSPOT_API_KEY <key> --stage <STAGE>
+```
+
+## Deploy
+
+```
+AWS_PROFILE=sst-prod npx sst deploy --stage <STAGE>
 ```
 
 # Astro Starter Kit: Basics

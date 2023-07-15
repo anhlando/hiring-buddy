@@ -3,14 +3,6 @@ import { Config, Api, StaticSite } from "sst/constructs";
 
 export default {
   config(_input) {
-    if (_input.stage === "dev") {
-      return {
-        name: "hiring-buddy",
-        // region singapore
-        region: "ap-southeast-1",
-      };
-    }
-
     return {
       name: "hiring-buddy",
       region: "ap-southeast-2",
